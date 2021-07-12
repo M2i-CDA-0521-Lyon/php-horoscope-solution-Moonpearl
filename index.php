@@ -60,11 +60,11 @@
 
                     <?php foreach ($horoscopes as $horoscope): ?>
                     <li class="sign">
-                        <img class="sign-icon" src="<?php echo $horoscope['icon'] ?>" alt="Icône <?php echo $horoscope['name'] ?>" />
-                        <h3 class="sign-name"><?php echo $horoscope['name'] ?></h3>
-                        <div class="sign-date"><?php echo $horoscope['startDate'] ?> - <?php echo $horoscope['endDate'] ?></div>
+                        <img class="sign-icon" src="<?= $horoscope['icon'] ?>" alt="Icône <?= $horoscope['name'] ?>" />
+                        <h3 class="sign-name"><?= $horoscope['name'] ?></h3>
+                        <div class="sign-date"><?= $horoscope['startDate'] ?> - <?= $horoscope['endDate'] ?></div>
                         <p class="sign-description">
-                            <?php echo $horoscope['description'] ?>
+                            <?= $horoscope['description'] ?>
                         </p>
                     </li>
                     <?php endforeach; ?>
@@ -78,8 +78,8 @@
 
                     <?php foreach ($links as $url => $name): ?>
                     <li>
-                        <a target="_blank" href="<?php echo $url ?>">
-                            <?php echo $name ?>
+                        <a target="_blank" href="<?= $url ?>">
+                            <?= $name ?>
                         </a>
                     </li>
                     <?php endforeach; ?>
