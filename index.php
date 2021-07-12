@@ -1,3 +1,10 @@
+<?php $links = [
+    'https://fr.wikipedia.org/wiki/Astrologie' => 'L\'astrologie sur Wikipedia',
+    'https://www.amazon.fr/Bible-lAstrologie-Judy-Hall/dp/281320238X/ref=sr_1_1?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=bible+astrologie&qid=1599851245&sr=8-1' => 'La bible de l\'astrologie sur Amazon',
+    'http://astroo.com/' => 'Astroo, le site pour calculer votre propre thème astral'
+] ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -128,21 +135,15 @@
             <section id="resources">
                 <h2>Ressources</h2>
                 <ul>
+
+                    <?php foreach ($links as $url => $name): ?>
                     <li>
-                        <a target="_blank" href="https://fr.wikipedia.org/wiki/Astrologie">
-                            L'astrologie sur Wikipedia
+                        <a target="_blank" href="<?php echo $url ?>">
+                            <?php echo $name ?>
                         </a>
                     </li>
-                    <li>
-                        <a target="_blank" href="https://www.amazon.fr/Bible-lAstrologie-Judy-Hall/dp/281320238X/ref=sr_1_1?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=bible+astrologie&qid=1599851245&sr=8-1">
-                            La bible de l'astrologie sur Amazon
-                        </a>
-                    </li>
-                    <li>
-                        <a target="_blank" href="http://astroo.com/">
-                            Astroo, le site pour calculer votre propre thème astral
-                        </a>
-                    </li>
+                    <?php endforeach; ?>
+
                 </ul>
             </section>
         </main>
