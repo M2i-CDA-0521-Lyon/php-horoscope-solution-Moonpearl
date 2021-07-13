@@ -1,4 +1,4 @@
-<?php $sign = 'Bélier' ?>
+<?php $sign = $_GET['sign'] ?>
 
 <?php $links = [
     'https://fr.wikipedia.org/wiki/Astrologie' => 'L\'astrologie sur Wikipedia',
