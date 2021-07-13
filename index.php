@@ -1,4 +1,8 @@
-<?php $sign = $_GET['sign'] ?>
+<?php
+if (isset($_GET['sign'])) {
+    $sign = intval($_GET['sign']);
+}
+?>
 
 <?php $links = [
     'https://fr.wikipedia.org/wiki/Astrologie' => 'L\'astrologie sur Wikipedia',
@@ -30,7 +34,6 @@
     ],
 ] ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,8 +63,8 @@
                 <h2>Horoscope du jour</h2>
                 <ol id="sign-grid">
 
-                    <?php foreach ($horoscopes as $horoscope): ?>
-                    <li class="sign <?php if ($horoscope['name'] === $sign) { echo 'user-sign'; } ?>">
+                    <?php foreach ($horoscopes as $index => $horoscope): ?>
+                    <li class="sign <?php if ($index === $sign) { echo 'user-sign'; } ?>">
                         <img class="sign-icon" src="<?= $horoscope['icon'] ?>" alt="Icône <?= $horoscope['name'] ?>" />
                         <h3 class="sign-name"><?= $horoscope['name'] ?></h3>
                         <div class="sign-date"><?= $horoscope['startDate'] ?> - <?= $horoscope['endDate'] ?></div>
