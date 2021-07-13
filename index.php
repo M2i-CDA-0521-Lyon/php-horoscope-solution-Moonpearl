@@ -1,6 +1,8 @@
 <?php
 if (isset($_GET['sign'])) {
     $sign = intval($_GET['sign']);
+} else {
+    $sign = null;
 }
 ?>
 
@@ -59,6 +61,16 @@ if (isset($_GET['sign'])) {
         </header>
 
         <main>
+            <form>
+                <label for="sign">Signe astrologique</label>
+                <select name="sign">
+                    <?php foreach ($horoscopes as $index => $horoscope): ?>
+                    <option value="<?= $index ?>" <?php if ($sign === $index) { echo 'selected'; } ?>><?= $horoscope['name'] ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <button type="submit">Valider</button>
+            </form>
+
             <section id="horoscope">
                 <h2>Horoscope du jour</h2>
                 <ol id="sign-grid">
