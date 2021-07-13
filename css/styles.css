@@ -82,6 +82,10 @@ h2 {
     }
 }
 
+.sign.user-sign {
+    border: 2px solid #0078D7;
+}
+
 .sign {
     padding: .5em;
     border: 1px dashed #ccc;

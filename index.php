@@ -1,3 +1,5 @@
+<?php $sign = 'Bélier' ?>
+
 <?php $links = [
     'https://fr.wikipedia.org/wiki/Astrologie' => 'L\'astrologie sur Wikipedia',
     'https://www.amazon.fr/Bible-lAstrologie-Judy-Hall/dp/281320238X/ref=sr_1_1?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=bible+astrologie&qid=1599851245&sr=8-1' => 'La bible de l\'astrologie sur Amazon',
@@ -11,7 +13,7 @@
         'description' => 'Votre code sera truffé d\'erreurs cette semaine. Mais vous gardez confiance: l\'ordinateur va finir par céder.',
         'startDate' => '21 mars',
         'endDate' => '19 avr.'
-    ], 
+    ],
     [
         'name' => 'Taureau',
         'icon' => 'images/zodiac/011-taurus.svg',
@@ -59,7 +61,7 @@
                 <ol id="sign-grid">
 
                     <?php foreach ($horoscopes as $horoscope): ?>
-                    <li class="sign">
+                    <li class="sign <?php if ($horoscope['name'] === $sign) { echo 'user-sign'; } ?>">
                         <img class="sign-icon" src="<?= $horoscope['icon'] ?>" alt="Icône <?= $horoscope['name'] ?>" />
                         <h3 class="sign-name"><?= $horoscope['name'] ?></h3>
                         <div class="sign-date"><?= $horoscope['startDate'] ?> - <?= $horoscope['endDate'] ?></div>
